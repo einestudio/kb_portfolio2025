@@ -1,0 +1,312 @@
+:root {
+  --fonts-mondwest: "PP Mondwest", apple-system, sans-serif;
+  --fonts-neueBit: "PP NeueBit", apple-system, sans-serif;
+  --colors-primary: #1b1b1b;
+  --colors-background: #f1f1f1;
+  --fontSizes-1: 13px;
+  --fontSizes-2: 15px;
+  --fontSizes-3: 17px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "PP NeueBit";
+}
+
+a {
+  color: var(--colors-primary);
+  text-decoration: none;
+}
+
+p {
+  font-family: "PP Mondwest";
+  font-size: 1.25rem;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 0;
+}
+
+.content {
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content__img {
+  max-width: 250px;
+  height: 350px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+@media screen and (min-width: 50em) {
+  .content {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--colors-background);
+}
+
+.container#dark {
+  background: var(--colors-primary);
+}
+
+.gradient {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 200px;
+  background: var(--colors-background);
+  background: linear-gradient(
+    0deg,
+    rgba(40, 40, 40, 0) 0%,
+    var(--colors-background) 100%
+  );
+}
+
+/* nav */
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  text-transform: uppercase;
+  z-index: 1000000 !important;
+}
+
+nav#light a {
+  color: var(--colors-background);
+}
+
+nav .nav-links {
+  display: flex;
+}
+
+nav .nav-logo .nav-link,
+nav .nav-links .nav-link {
+  padding: 1rem;
+}
+
+nav .nav-logo {
+  font-size: 4rem;
+}
+
+/* header */
+header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+header #name {
+  font-family: "PP NeueBit";
+  font-size: 3.575rem;
+}
+
+.profil {
+  max-width: 40vh;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* about */
+section.about {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+section.about .about-col p {
+  color: var(--colors-background);
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) {
+  section.about {
+    gap: 0;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  section.about .about-col p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.profil_about {
+  width: 24rem;
+}
+
+/* cases */
+section.cases {
+  width: 100%;
+  padding-top: 8rem;
+  color: var(--colors-background);
+}
+
+section.cases .case {
+  width: 100%;
+  padding: 0.05rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--colors-background);
+}
+
+section.cases .case#final-case {
+  border-bottom: 1px solid var(--colors-background);
+}
+
+section.cases .case > div {
+  padding: 1rem;
+  flex: 2;
+}
+
+section.cases .case .case-category {
+  flex: 1;
+  text-transform: uppercase;
+  padding-left: 6%;
+}
+
+section.cases .case .case-icon {
+  flex: 1;
+}
+
+section.cases .case .case-icon .case-icon-img {
+  width: 100px;
+  height: 100px;
+  background: var(--colors-background);
+  border-radius: 2rem;
+}
+
+section.cases .case .case-name {
+  flex: 9;
+  font-family: "PP Mondwest";
+  font-size: 4rem;
+}
+
+section.cases .case .case-year .case-info {
+  flex: 1;
+  font-family: "PP NeueBit";
+}
+
+@media (max-width: 900px) {
+  section.cases .case .case-category {
+    font-size: 0.75rem;
+  }
+
+  section.cases .case .case-year {
+    display: none;
+  }
+
+  section.cases .case .case-icon .case-icon-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 0.5rem;
+  }
+
+  section.cases .case .case-name {
+    font-size: 2rem;
+  }
+}
+
+/* footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+footer#relative {
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+footer .footer-col {
+  flex: 1;
+  text-align: center;
+}
+
+footer .footer-col p {
+  font-size: 1.125rem;
+}
+
+footer#light p {
+  color: var(--colors-background);
+}
+
+#project-1 {
+  background: url("./images/bhah.webp") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#project-2 {
+  background: url("./images/bon_fromage.webp") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#project-3 {
+  background: url("./images/jonathan_schou.webp") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#project-4 {
+  background: url("./images/bolo_poster.webp") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#project-5 {
+  background: url("./images/foramic.webp") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#project-6 {
+  background: url("./images/vicarage.webp") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#project-7 {
+  background: url("./images/07.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#project-8 {
+  background: url("./images/08.png") no-repeat 50% 50%;
+  background-size: cover;
+}
